@@ -27,7 +27,7 @@ if ( MSVC )
 	add_definitions(-D_SCL_SECURE_NO_WARNINGS)
 endif ( MSVC )
 
-configure_file(fonts/Roboto-Medium.ttf 
+configure_file(Roboto-Medium.ttf 
 				Roboto-Medium.ttf COPYONLY)
 configure_file(test.shader 
 				test.shader COPYONLY)
