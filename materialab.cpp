@@ -85,18 +85,18 @@ void LoadMesh(Mesh mesh_id) {
     mesh.Destroy();
     switch (mesh_id) {
     case Mesh::Cube:
-        mesh = tira::glGenerateCube<float>();
+        mesh = tira::glGeometry::GenerateCube<float>();
         break;
     case Mesh::Sphere:
-        mesh = tira::glGenerateSphere<float>(100, 100);
+        mesh = tira::glGeometry::GenerateSphere<float>(100, 100);
         break;
     case Mesh::Icosahedron:
         //mesh = tira::glGenerateSphere<float>(10, 10);
-        mesh = tira::glGenerateIcosahedron<float>();
+        mesh = tira::glGeometry::GenerateIcosahedron<float>();
         break;
     case Mesh::Icosphere:
         //mesh = tira::glGenerateSphere<float>(10, 10);
-        mesh = tira::glGenerateIcosphere<float>(5, true);
+        mesh = tira::glGeometry::GenerateIcosphere<float>(5, true);
         break;
     default:
         break;
