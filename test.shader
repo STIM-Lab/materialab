@@ -1,5 +1,5 @@
 # shader vertex
-# version 330 core
+# version 140
 
 layout(location = 0) in vec3 vertices;
 layout(location = 2) in vec2 texcoords;
@@ -16,7 +16,7 @@ void main(){
 };
 
 # shader fragment
-# version 330 core
+# version 140
 
 layout(location = 0) out vec4 color;
 

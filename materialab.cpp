@@ -230,23 +230,27 @@ void RefreshDeviceMaterialData() {
 void CreateDefaultMaterial() {
     
     std::string VertexSource =                                  // Source code for the default vertex shader
-        "# version 330 core\n"
-        "layout(location = 0) in vec3 vertices;\n"
-        "layout(location = 2) in vec2 texcoords;\n"
+        "# version 130\n"
+        "in vec3 vertices;\n"
+        "in vec3 normals;\n"
+        "in vec2 texcoords;\n"
         "uniform mat4 MVP;\n"
         "out vec4 vertex_color;\n"
-        "out vec2 vertex_texcoord;\n"
+        "out vec3 vertex_normals;\n"
+        "out vec2 vertex_texcoord;\n"        
         "void main() {\n"
         "    gl_Position = MVP * vec4(vertices.x, vertices.y, vertices.z, 1.0f);\n"
         "    vertex_color = vec4(vertices.x + 0.5, vertices.y + 0.5, vertices.z + 0.5, 1.0);\n"
         "    vertex_texcoord = texcoords;\n"
+        "    vertex_normals = normals;\n"
         "};\n";
 
     
     std::string FragmentSource =                               // Source code for the default fragment shader
-        "# version 330 core\n"
-        "layout(location = 0) out vec4 color;\n"
+        "# version 130\n"
+        "out vec4 color;\n"
         "in vec4 vertex_color;\n"
+        "in vec3 vertex_normals;\n"
         "in vec2 vertex_texcoord;\n"
         "uniform sampler2D texmap;\n"
         "void main() {\n"
